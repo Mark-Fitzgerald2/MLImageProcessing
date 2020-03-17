@@ -60,11 +60,12 @@ print(image2.size)
 #show the image
 image2.show()
 #save the image
-#image2.save("my_file.jpeg")
+#image2.save("my_file.jpeg", format='JPEG')
 """
 
 #Load all images in a directory
 
+"""
 from os import listdir
 from matplotlib import image
 
@@ -76,3 +77,21 @@ for filename in listdir('images/Regular Tackles'):
 	#store loaded image 
 	loadedImages.append(imageData)
 	print('Loaded: %s %s' % (filename, imageData.shape))
+"""
+
+
+#Resize an image
+
+
+#load the image
+image = Image.open('images/Regular Tackles/1.jpg')
+#print the size of the image
+print(image.size)
+#resize image and ignore aspect ratio
+imageResized = image.resize((200,200))
+#report the size
+print(imageResized.size)
+#create a thumbnail and preserve aspect ratio
+image.thumbnail((100,100))
+#report the size of the thumbnail
+print(image.size)
