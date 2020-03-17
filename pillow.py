@@ -38,6 +38,7 @@ pyplot.show()
 
 #load an image and convert to and from NumPy array
 
+"""
 from numpy import asarray
 #load the image
 image = Image.open('images/Regular Tackles/1.jpg')
@@ -60,3 +61,18 @@ print(image2.size)
 image2.show()
 #save the image
 #image2.save("my_file.jpeg")
+"""
+
+#Load all images in a directory
+
+from os import listdir
+from matplotlib import image
+
+#load all images
+loadedImages = list()
+for filename in listdir('images/Regular Tackles'):
+	#load image
+	imageData = image.imread('images/Regular Tackles/' + filename) 
+	#store loaded image 
+	loadedImages.append(imageData)
+	print('Loaded: %s %s' % (filename, imageData.shape))
